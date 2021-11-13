@@ -8,14 +8,10 @@ app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded());
 
-let list = [];
+let cars = [];
 
 app.get("/", (req, res) => {
   res.render('index');
-});
-
-app.get("/home", (req, res) => {
-  res.render('home');
 });
 
 app.get("/cadastro", (req, res) => {
@@ -26,15 +22,15 @@ app.get("/informacoes", (req, res) => {
   res.render('informacoes');
 });
 
-app.post("/sent", (req, res) => {
+app.post("/subscription", (req, res) => {
   const data = req.body;
-  list.push(data)
-  res.redirect("/home")
+  cars.push(data)
+  res.redirect("/")
 })
 
 app.get("/details/:id", (req, res) => {
   const id = req.params.id;
-  const dataById = list[id];
+  const dataById = cars[id];
   res.render('details', { listById: dataById });
 });
 
