@@ -6,6 +6,9 @@ const port = 3000;
 
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
+app.use(express.urlencoded());
+
+let list = [];
 
 app.get("/", (req, res) => {
   res.render('index');
@@ -19,15 +22,23 @@ app.get("/catalog", (req, res) => {
   res.render('catalog');
 });
 
-app.get("/details", (req, res) => {
-  res.render('details');
+app.post("/sent", (req, res) => {
+  const data = req.body;
+  list.push(data)
+  res.redirect("/home")
+})
+
+app.get("/details/:id", (req, res) => {
+  const id = req.params.id;
+  const dataById = list[id];
+  res.render('details', { listById: dataById });
 });
 
 app.get("/new_catalog", (req, res) => {
   res.render('newCatalog');
 });
 
-app.get("/delete", (req, res) => {
+app.get("/deletar", (req, res) => {
   res.render('delete');
 });
 
