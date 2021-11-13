@@ -18,8 +18,12 @@ app.get("/home", (req, res) => {
   res.render('home');
 });
 
-app.get("/catalog", (req, res) => {
-  res.render('catalog');
+app.get("/cadastro", (req, res) => {
+  res.render('cadastro');
+});
+
+app.get("/informacoes", (req, res) => {
+  res.render('informacoes');
 });
 
 app.post("/sent", (req, res) => {
@@ -34,8 +38,8 @@ app.get("/details/:id", (req, res) => {
   res.render('details', { listById: dataById });
 });
 
-app.get("/new_catalog", (req, res) => {
-  res.render('newCatalog');
+app.get("/new_cadastro", (req, res) => {
+  res.render('newCadastro');
 });
 
 app.get("/deletar", (req, res) => {
