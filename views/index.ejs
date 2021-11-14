@@ -16,7 +16,7 @@
 		<!-- Header -->
 		<div id="index_page">
 			<header id="header" class="container">
-
+				
 				<!-- Logo -->
 				<div id="logo">
 					<h1>WEB CAR</a></h1>
@@ -26,12 +26,16 @@
 					<ul>
 						<li class="principal">Home</li>
 						<li class="principal">Cadastro</li>
-
 					</ul>
-				</nav>
-
+				</nav>	
 			</header>
 		</div>
+		<% if(msg != "") { %>
+			<section id="message">
+				<p><%= msg%></p><p id="close">&times;</p>
+			</section>
+		<%} %>
+
 		<!-- Banner -->
 		<div id="banner-wrapper">
 			<div id="banner" class="box container">
@@ -49,58 +53,32 @@
 				</div>
 			</div>
 		</div>
+
 		<!-- Features -->
-		<div id="features-wrapper">
-			<div class="container">
-				<div class="row">
-					<div class="col-4 col-12-medium">
-
-						<!-- Box -->
-						<section class="box feature">
-							<a href="#" class="image featured"><img src="/img/pic01.png" height="250" width="200" alt="" /></a>
+		
+		<!-- Box -->
+		<% cars.forEach( (item, id) => { %>
+			<div id="features-wrapper">
+				<div class="container">
+					<div class="row">
+						<div class="col-4 col-12-medium">
+							<section class="box feature">	
+							<a href="/detalhes/<%=id%>" class="image featured"><img src=<%= item.img %> height="250" width="200" alt=<%= item.cars %> /></a> 
 							<div class="inner">
-								<header>
-									<h2>Ford Fusion SEL AWD</h2>
-									<p>ANO 2011/2011 AUTOMATICO R$ 43.500</p>
-								</header>
-								<p>Veículo completo, banco em couro, central multimídia synk2, cambio automatico de 6 velociades</p>
-							</div>
+									<header>
+										<h2><%= item.cars %> <%= item.modelo %></h2>
+										<p><%= item.ano %> <%= item.cambio %> R$ <%= item.valor %></p>
+									</header>
+									<p><%= item.descricao %></p>
+								</div>
+							</a>
 						</section>
-
 					</div>
-					<div class="col-4 col-12-medium">
-
-						<!-- Box -->
-						<section class="box feature">
-							<a href="#" class="image featured"><img src="/img/pic02.jpg" height="250" width="200" alt="" /></a>
-							<div class="inner">
-								<header>
-									<h2>FIAT IDEIA ADVENTURE</h2>
-									<p>2013/2014 AUTOMATIZADO R$ 45.000</p>
-								</header>
-								<p>Teto solar panoramico, cambio automatizado 5 velocidades</p>
-							</div>
-						</section>
-
-					</div>
-					<div class="col-4 col-12-medium">
-
-						<!-- Box -->
-						<section class="box feature">
-							<a href="#" class="image featured"><img src="/img/pic03.png" height="250" width="200" alt="" /></a>
-							<div class="inner">
-								<header>
-									<h2>NEW FIESTA</h2>
-									<p>2017/2017 AUTOMATICO R$ 22.900</p>
-								</header>
-								<p>Ar e direção</p>
-							</div>
-						</section>
-
 					</div>
 				</div>
 			</div>
 		</div>
+							<%}) %>
 
 
 		<!-- Footer -->
