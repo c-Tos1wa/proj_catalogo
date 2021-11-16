@@ -63,10 +63,10 @@ app.get("/cadastro", (req, res) => {
   res.render('cadastro');
 });
 
-/*
+
 app.get("/informacoes", (req, res) => {
   res.render('informacoes');
-}); */
+}); 
 
 app.post("/subscription", (req, res) => {
   const data = req.body;

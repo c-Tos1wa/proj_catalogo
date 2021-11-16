@@ -33,16 +33,15 @@ input, select, textarea {
 	-ms-appearance: none;
 	appearance: none;
 }
-
 /* Basic */
 
 	@-ms-viewport {
 		width: device-width;
 	}
 
-	html {
+	/* html {
 		box-sizing: border-box;
-	}
+	} */
 
 	*, *:before, *:after {
 		box-sizing: inherit;
@@ -95,6 +94,7 @@ input, select, textarea {
 	h1, h2, h3, h4, h5, h6 {
 		color: #444;
 		font-weight: 800;
+		
 	}
 
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
