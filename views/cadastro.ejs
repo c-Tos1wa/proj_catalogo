@@ -44,7 +44,11 @@
                             
                 <section id="cadastro">
                   <form action="/subscription" method="POST">
-                      <div>
+                    <div>
+                        <label for="modelo">Insira as fotos: </label>
+                        <input type="file" name="arquivos" class="btn btn-success"  accept="image/png, image/jpeg" width="250" height="200">
+                    </div>
+                    <div>
                         <label for="cars">Selecione a marca:</label>
                         <select name="cars" id="cars">
                         <option value="volvo">Volvo</option>
