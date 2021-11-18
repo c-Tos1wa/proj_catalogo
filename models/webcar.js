@@ -1,19 +1,60 @@
 const database = require("../database");
 const Sequelize = require("sequelize");
 
-const webcar = database.define("webcar", {
+const Webcar = database.define("carros", {
   id: {
     type: Sequelize.INTEGER,
     autoIncrement: true,
     allowNull: false,
     primaryKey: true,
   },
-  nome: {
+
+  motor: {
     type: Sequelize.STRING,
     allowNull: false,
   },
-  descricao: Sequelize.STRING,
+
+  modelo: {
+    type:Sequelize.STRING,
+    allowNull: false,
+  },
+
+  cambio: {
+    type:Sequelize.STRING,
+    allowNull: false,
+  },
+
   imagem: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+
+  cor:{
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+
+  combustivel: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+
+  descricao: {
+    type: Sequelize.TEXT,
+    allowNull: false,
+  },
+
+  valor: {
+    type: Sequelize.INTEGER,
+    allowNull: false,
+  },
+  
+  marca: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
+
+  ano: {
     type: Sequelize.STRING,
     allowNull: false,
   },
@@ -25,4 +66,4 @@ const webcar = database.define("webcar", {
   updatedAt: false,
 });
 
-module.exports = Filme;
+module.exports = Webcar;

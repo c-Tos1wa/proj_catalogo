@@ -9,6 +9,7 @@ app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded());
 
+<<<<<<< HEAD
 let listOfCars = [
   {
     cars: "Ford",
@@ -47,15 +48,21 @@ let listOfCars = [
     descricao: "Ar e direção"
   }
 ];
+=======
+const Cars = require('./models/webcar');
+const CarById = require('./models/webcar');
+
+>>>>>>> 75c3cddf23cf2546f186104a5dcbbaa7bbd39f13
 let msg = "";
 
-app.get("/", (req, res) => {
+app.get("/", async(req, res) => {
+  const cars = await Cars.findAll();
 
   setTimeout (() => {
     msg = ""
   }, 5000)
   res.render('index', {
-    cars: listOfCars,
+    cars,
     msg
   });
 });
@@ -65,29 +72,19 @@ app.get("/cadastro", (req, res) => {
 });
 
 
-/*
-app.get("/informacoes", (req, res) => {
-  res.render('informacoes');
-}); */
-
-
-
-// app.get("/detalhes", (req, res) => {
-//   res.render('detalhes');
-// });
-
-
 app.post("/subscription", (req, res) => {
   const data = req.body;
   listOfCars.push(data)
-  msg = `Seu ${data.cars} ${data.modelo} foi cadastrado. Agradecemos pela preferência`
+  msg = `Seu ${data.marca} ${data.modelo} foi cadastrado. Agradecemos pela preferência`
   res.redirect("/")
 })
 
-app.get("/detalhes/:id", (req, res) => {
-  const id = req.params.id;
-  const carById = listOfCars[id];
-  res.render('detalhes', { cars: carById });
+app.get("/detalhes/:id", async(req, res) => {
+  const cars = await Cars.findByPk(req.params.id);
+  
+  res.render('detalhes', { 
+    cars 
+  });
 });
 
 app.get("/new_cadastro", (req, res) => {
