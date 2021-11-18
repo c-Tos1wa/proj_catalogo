@@ -65,13 +65,17 @@ app.get("/cadastro", (req, res) => {
 });
 
 
+/*
 app.get("/informacoes", (req, res) => {
   res.render('informacoes');
-}); 
+}); */
+
+
 
 // app.get("/detalhes", (req, res) => {
 //   res.render('detalhes');
 // });
+
 
 app.post("/subscription", (req, res) => {
   const data = req.body;
