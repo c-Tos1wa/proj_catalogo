@@ -25,7 +25,7 @@ let listOfCars = [
   {
     cars: "Fiat",
     modelo: "Ideia Adventure",
-    img: "/img/pic02.png",
+    img: "/img/pic02.jpg",
     motor: "3",
     cambio: "automatizado",
     ano: "2013/2014",
