@@ -68,14 +68,14 @@
 
 												<!-- Box -->
 												<section class="box feature">
-														<% cars.map( item => { %>
-														<a href="/detalhes/<%=item.id%>" class="image featured"><img src=<%=item.imagem %>
-															height="250" width="200" alt=<%= item.marca %> /></a>
-														<div class="inner">
-															<header>
-																<center>
-																	<img src="/img/Black-Friday.png" width="100" height="50" />
-																</center>
+													<center>
+														<img src="/img/Black-Friday.png" width="100" height="50" />
+													</center>
+													<header>
+																<% cars.map( item => { %>
+																<a href="/detalhes/<%=item.id%>" class="image featured"><img src=<%=item.imagem %>
+																	height="250" width="200" alt=<%= item.marca %> /></a>
+																<div class="inner">
 																<h2>
 																		<%= item.marca %>
 																		<%= item.modelo %>
@@ -83,13 +83,13 @@
 																<p>
 																	<%= item.ano %>
 																	<%= item.cambio %> 
-																	R$ <%= item.valor %>
+																	R$<%= item.valor %>
 																</p>
+																<p>
+																	<%= item.descricao %>
+																</p>
+																<%}) %>
 															</header>
-															<p>
-																<%= item.descricao %>
-															</p>
-															<%}) %>
 													</section>
 
 											</div>

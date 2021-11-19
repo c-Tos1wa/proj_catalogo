@@ -56,7 +56,7 @@ const Webcar = database.define("carros", {
 
   ano: {
     type: Sequelize.STRING,
-    allowNull: false,
+    allowNull: false
   },
 },
 {
