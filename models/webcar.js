@@ -11,7 +11,6 @@ const Webcar = database.define("carros", {
 
   motor: {
     type: Sequelize.STRING,
-    allowNull: false,
   },
 
   modelo: {
@@ -21,7 +20,6 @@ const Webcar = database.define("carros", {
 
   cambio: {
     type:Sequelize.STRING,
-    allowNull: false,
   },
 
   imagem: {
@@ -31,17 +29,14 @@ const Webcar = database.define("carros", {
 
   cor:{
     type: Sequelize.STRING,
-    allowNull: false,
   },
 
   combustivel: {
     type: Sequelize.STRING,
-    allowNull: false,
   },
 
   descricao: {
     type: Sequelize.TEXT,
-    allowNull: false,
   },
 
   valor: {

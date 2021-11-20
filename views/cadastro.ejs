@@ -33,10 +33,17 @@
 								<h2>Seja bem vindo a Web Car</h2>
 								<p>Insira os dados de seu veículo, e deixe o resto com a gente!</p>
 							</div>
-							
 						</div>
 					</div>
-				</div>  
+				</div> 
+                <% if(msg != "" ) { %>
+                    <section id="message">
+                        <p>
+                            <%= msg%>
+                        </p>
+                        <p id="close">&times;</p>
+                    </section>
+                    <%} %> 
                 <!-- Features -->
 				<div id="features-wrapper">
 				<div class="container">
@@ -48,57 +55,58 @@
                   <form action="/subscription" method="POST">
                     <div>
                         <label for="imagem">Insira o link da foto </label>
-                        <input type="text" name="imagem" class="btn btn-success" placeholder="Coloque o link da sua foto aqui" width="250" height="200" required>
+                        <input type="text" name="imagem" class="btn btn-success" placeholder="Coloque o link da sua foto aqui" width="250" height="200">
                     </div>
                     <div>
                         <label for="marca">Selecione a marca:</label>
                         <select name="marca" id="marca">
-                        <option value="volvo">Volvo</option>
-                        <option value="saab">Saab</option>
-                        <option value="mercedes">Mercedes</option>
-                        <option value="audi">Audi</option>
-                        <option value="fiat">Fiat</option>
-                        <option value="renault">Renault</option>
-                        <option value="ford">Ford</option>
-                        <option value="volkwagen">Volkwagen</option>
-                        <option value="chary">Chary</option>
-                        <option value="chevrolet">Chevrolet</option>
-                        <option value="citroen">Citroen</option>
-                        <option value="hyundai">Hyundai</option>
+                            <option value="">Clique aqui para selecionar a marca do seu carro</option>
+                            <option value="volvo">Volvo</option>
+                            <option value="saab">Saab</option>
+                            <option value="mercedes">Mercedes</option>
+                            <option value="audi">Audi</option>
+                            <option value="fiat">Fiat</option>
+                            <option value="renault">Renault</option>
+                            <option value="ford">Ford</option>
+                            <option value="volkwagen">Volkwagen</option>
+                            <option value="chary">Chary</option>
+                            <option value="chevrolet">Chevrolet</option>
+                            <option value="citroen">Citroen</option>
+                            <option value="hyundai">Hyundai</option>
                         </select>
                       </div>
                                                       
                       <div>
                           <label for="modelo">Modelo: </label>
-                          <input type="text" name="modelo" id="modelo" placeholder="Digite o modelo " required>
+                          <input type="text" name="modelo" id="modelo" placeholder="Digite o modelo ">
                       </div>
                       <div>
                           <label for="motor">Motor: </label>
-                          <input type="text" name="motor" id="motor" placeholder="Digite as cilindradas do motor " required>
+                          <input type="text" name="motor" id="motor" placeholder="Digite as cilindradas do motor ">
                       </div>
                       <div>
                           <label for="cambio">Cambio: </label>
-                          <input type="text" name="cambio" id="cambio" placeholder="Digite o tipo do cambio " required>
+                          <input type="text" name="cambio" id="cambio" placeholder="Digite o tipo do cambio ">
                       </div>
                       <div>
                           <label for="ano">Ano: </label>
-                          <input type="text" name="ano" id="ano" placeholder="Digite o ano " required>
+                          <input type="text" name="ano" id="ano" placeholder="Digite o ano ">
                       </div>
                       <div>
                           <label for="cor">Cor: </label>
-                          <input type="text" name="cor" id="cor" placeholder="Digite a cor " required>
+                          <input type="text" name="cor" id="cor" placeholder="Digite a cor ">
                       </div>
                       <div>
                           <label for="combustivel">Combustível: </label>
-                          <input type="text" name="combustivel" id="combustivel" placeholder="Digite o combustivel " required>
+                          <input type="text" name="combustivel" id="combustivel" placeholder="Digite o combustivel ">
                       </div>
                       <div>
                           <label for="valor">Valor: </label>
-                          <input type="text" name="valor" id="valor" placeholder="Digite o valor " required>
+                          <input type="text" name="valor" id="valor" placeholder="Digite o valor ">
                       </div>
                       <div>
                           <label for="descricao">Descrição adicional: </label>
-                          <input type="text" name="descricao" id="descricao" placeholder="Digite a descricao " required>
+                          <input type="text" name="descricao" id="descricao" placeholder="Digite a descricao ">
                       </div>
                       <p></p>
                       <button type="submit">Cadastrar</button>
@@ -121,7 +129,7 @@
 						</div>
 					</div>
 		</div>
-
+<script src="js/script.js"></script>
 </body>
 
 </html>
