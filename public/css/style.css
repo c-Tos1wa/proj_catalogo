@@ -67,7 +67,59 @@ input, select, textarea {
 		line-height: 2.25em;
 	}
 
-		
+		section#cadcarros{
+		padding: 1rem;
+   	 	display: flex;
+    	justify-content: center;
+    	flex-wrap: wrap;
+    	opacity: 0.9;
+    	background-color: #fff;
+    	margin: 0 20rem 10 20rem;
+    	box-shadow: 0 0 1rem #00000060;
+    	border-radius: 1rem;
+
+		}
+
+		.bt {
+			border:1px solid #25692A;
+			border-radius:4px;
+			display:inline-block;
+			cursor:pointer;
+			font-family:Verdana;
+			font-weight:bold;
+			font-size:13px;
+			padding:6px 10px;
+			text-decoration:none;
+			} 
+			
+			.bt-vd {
+			border-color:#68b465;
+			background:linear-gradient(to bottom, #abd5aa 5%, #68b465 100%);
+			box-shadow:inset 0px 1px 0px 0px #e3f1e3;
+			color:#fff;
+			text-shadow:0px 1px 0px #528009;
+			}
+			
+			
+			.bt-vd:hover {
+			background:linear-gradient(to bottom, #68b465 5%, #abd5aa 100%);
+			}
+			
+			.bt-lj:hover {
+			background:linear-gradient(to bottom, #eb9b48 5%, #f7d6b3 100%);
+			}
+			
+			.bt-az:hover {
+			background:linear-gradient(to bottom, #46a7f5 5%, #86c6f8 100%);
+			}
+			
+			.bt-vm:hover {
+			background:linear-gradient(to bottom, #f61f0e 5%, #fca8a1 100%);
+			}
+			
+			.bt:active {
+			position:relative;
+			top:2px;}
 
 	input, select, textarea {
 		font-family: 'Open Sans', sans-serif;
@@ -237,6 +289,7 @@ input, select, textarea {
 
 		.row > .col-4 {
 			width: 33.33333%;
+			
 		}
 
 		.row > .off-4 {
@@ -1029,11 +1082,11 @@ input, select, textarea {
 /* Box */
 .box.feature.cadastro {
 	background: rgb(148, 28, 28);
-	border-radius: 6px;
+	border-radius: 10px;
 	box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.05);
 	padding: 2em;
 }
-
+	
 	.box {
 		background: #fff;
 		border-radius: 6px;
@@ -1047,10 +1100,10 @@ input, select, textarea {
 
 		.box.feature {
 			padding: 0;
-			display: flex;
+			display: flexbox;
 			flex-wrap: wrap;
-			flex-direction: column;
-			align-content: space-between;
+			flex-direction:column;
+			align-content: space-around;
 			
 		}
 
@@ -1970,4 +2023,8 @@ input, select, textarea {
 				text-align: left;
 			}
 
-	}
+			
+
+			}
+
+	

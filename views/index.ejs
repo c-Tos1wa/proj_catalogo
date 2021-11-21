@@ -22,20 +22,17 @@
 					</p>
 					<p id="close">&times;</p>
 				</section>
-				<%} %>
+				
 			<div id="index_page">
 			<header id="header" class="container">
-
+				<%} %>
 				<!-- Logo -->
 				<div id="logo">
 					<h1>WEB CAR</h1>
 					<span>Sua loja automotiva virtual</span>
 				</div><!-- Nav -->
 				<nav id="nav">
-					<ul>
-						<a href="/"><li class="principal">Home</li></a>
-						<a href="/cadastro"><li class="principal">Cadastro</li></a>
-					</ul>
+					
 				</nav>
 			</header>
 		</div>
@@ -60,19 +57,24 @@
 								</div>
 
 
-								<!-- Features -->
+							<	<!-- Features -->
+							
 								<div id="features-wrapper">
+									
 									<div class="container">
+										
 										<div class="row">
+											
 											<div class="col-4 col-12-medium">
 
 												<!-- Box -->
-												<section class="box feature">
+												<section id="cadcarros">
+													<% cars.map( item => { %>
 													<center>
 														<img src="/img/Black-Friday.png" width="100" height="50" />
 													</center>
 													<header>
-																<% cars.map( item => { %>
+																
 																<a href="/detalhes/<%=item.id%>" class="image featured"><img src=<%=item.imagem %>
 																	height="250" width="200" alt=<%= item.marca %> /></a>
 																<div class="inner">
@@ -88,15 +90,18 @@
 																<p>
 																	<%= item.descricao %>
 																</p>
-																<%}) %>
+																<section id="cadcarros">
 															</header>
+															<%}) %>
+														</section>
 													</section>
+													
 
 											</div>
 										</div>
 									</div>
 								</div>
-							</div>
+							</div>>
 
 
 							<!-- Footer -->
@@ -169,7 +174,7 @@
 											<div id="copyright">
 												<ul class="menu">
 													<li>&copy; Untitled. Todos os direitos reservados</li>
-													<li>Design: <a href="http://html5up.net">Luiz Alberto Coimbra</a></li>
+													<li>Design: <a href="">Luiz Alberto Coimbra</a></li>
 												</ul>
 											</div>
 										</div>
