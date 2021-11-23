@@ -9,49 +9,9 @@ app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded());
 
-
-// let listOfCars = [
-//   {
-//     cars: "Ford",
-//     modelo: "Fusion SEL AWD",
-//     img: "/img/pic01.png",
-//     motor: "3",
-//     cambio: "AUTOMÁTICO",
-//     ano: "2011",
-//     cor: "prata",
-//     combustivel: "flex",
-//     valor: "R$43.500",
-//     descricao: "Veiculo completo, banco em couro, central multimidia synk2, cambio automatico de 6 velocidades"
-//   },
-//   {
-//     cars: "Fiat",
-//     modelo: "Ideia Adventure",
-//     img: "/img/pic02.jpg",
-//     motor: "3",
-//     cambio: "automatizado",
-//     ano: "2013/2014",
-//     cor: "prata",
-//     combustivel: "flex",
-//     valor: "R$45.000",
-//     descricao: "Teto solar panorâmico, cambio automatizado 5 velocidades"
-//   },
-//   {
-//     cars: "New Fiesta",
-//     modelo: "",
-//     img: "/img/pic03.png",
-//     motor: "3",
-//     cambio: "automático",
-//     ano:"2017",
-//     cor: "prata",
-//     combustivel: "flex",
-//     valor: "R$22.900",
-//     descricao: "Ar e direção"
-//   }
-// ];
-
 const Cars = require('./models/webcar');
-const CarById = require('./models/webcar');
 
+// Função para temporizar mensagem em 5 segundos.
 
 let msg = "";
 
@@ -67,17 +27,64 @@ app.get("/", async(req, res) => {
   });
 });
 
+// Inserir dados no banco de dados.
+
+
 app.get("/cadastro", (req, res) => {
-  res.render('cadastro');
+  res.render('cadastro', { msg })
 });
 
+app.post("/subscription", async (req, res) => {
+  const { marca, modelo, imagem, motor, cambio, descricao, ano, cor, combustivel, valor } = req.body;
 
-app.post("/subscription", (req, res) => {
-  const data = req.body;
-  listOfCars.push(data)
-  msg = `Seu ${data.marca} ${data.modelo} foi cadastrado. Agradecemos pela preferência`
-  res.redirect("/")
-})
+  // Veficação de campos obrigatórios não preenchidos.
+
+  if(!marca) {
+    res.render("cadastro", {
+      msg: 'Informe a marca do veículo!!!'
+    })
+  }
+  else if ( !modelo ) {
+    res.render("cadastro", {
+      msg: 'Informe o modelo do veículo!!!'
+    })
+  } else if ( !imagem ) {
+    res.render("cadastro", {
+      msg: 'Insira o link da imagem do veículo!!!'
+    }) 
+  } else if ( !valor ) {
+    res.render("cadastro", {
+      msg: "Insira o valor que deseja receber pelo seu veículo!!!"
+    })
+  } else if ( !ano ) {
+    res.render("cadastro", {
+      msg: "Insira o ano do veículo!!!"
+    })
+  }
+
+  // Validação de erro.
+
+  else {
+    try {
+      const carros = await Cars.create({
+        marca, modelo, imagem, motor, cambio, descricao, ano, cor, combustivel, valor
+      });
+      res.render("cadastro", {
+        carros, 
+        msg: 'Veículo cadastrado com sucesso' 
+      });
+      
+    } catch(err) {
+      console.log(err);
+
+      res.render("cadastro", {
+        msg: "Opa! Ocorreu um erro ao cadastrar!"
+      })
+    }
+  } res.redirect('/')
+});
+
+// Exibe registro completo do banco de dados.
 
 app.get("/detalhes/:id", async(req, res) => {
   const cars = await Cars.findByPk(req.params.id);
@@ -87,12 +94,73 @@ app.get("/detalhes/:id", async(req, res) => {
   });
 });
 
-app.get("/new_cadastro", (req, res) => {
-  res.render('newCadastro');
+
+
+// Editar registro no banco de dados.
+app.get("/editar/:id", async (req, res) => {
+  const cars = await Cars.findByPk(req.params.id);
+
+  res.render('editar',{
+    cars, msg
+  });
 });
 
-app.get("/deletar", (req, res) => {
-  res.render('delete');
+app.post("/editar/:id", async (req, res) => {
+  const cars = await Cars.findByPk(req.params.id);
+
+  const { marca, modelo, imagem, motor, cambio, descricao, ano, cor, combustivel, valor } = req.body;
+
+  cars.marca = marca;
+  cars.modelo = modelo;
+  cars.imagem = imagem;
+  cars.motor = motor;
+  cars.cambio = cambio;
+  cars.descricao = descricao;
+  cars.ano = ano;
+  cars.cor = cor;
+  cars.combustivel = combustivel;
+  cars.valor =  valor;
+
+  const carroEditado = await cars.save();
+
+  res.render("editar", {
+    cars: carroEditado,
+    msg: "Editado com sucesso!",
+  });
 });
+
+// Deletar registro do banco de dados.
+
+app.get("/deletar/:id", async (req, res) => {
+  const cars = await Cars.findByPk(req.params.id);
+
+  if (!Cars) {
+    res.render("deletar", {
+      msg: "Veículo não encontrado!",
+    });
+  }
+
+  res.render("deletar", {
+    cars, msg
+  });
+});
+
+app.post("/deletar/:id", async (req, res) => {
+  const cars = await Cars.findByPk(req.params.id);
+
+  if (!cars) {
+    res.render("deletar", {
+      cars, msg: "Filme não encontrado!",
+    });
+  }
+
+  await cars.destroy();
+
+  msg = `Filme ${cars.modelo} Deletado com sucesso!`
+
+  res.redirect("/");
+});
+
+
 
 app.listen(port, () => console.log(`Servidor operando em http://localhost:${port}`))

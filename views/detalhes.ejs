@@ -1,56 +1,41 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/style.css">
+    <title>WEB CAR - Detalhes</title>
+</head>
 
-		<html lang="pt-br">
-			<head>
-				<meta charset="UTF-8">
-				<meta http-equiv="X-UA-Compatible" content="IE=edge">
-				<meta name="viewport" content="width=device-width, initial-scale=1.0">
-				<link rel="stylesheet" href="/css/style.css">
-				<title>WEB CAR</title>
-			</head>
-			<body>
+<body>
+						
+				<!-- Logo -->
+				<div>
+				<div id="logo">
+					<h1>WEB CAR</a></h1>
 				
-				<!-- Banner -->
-				<div id="banner-wrapper">
-					<div id="banner" class="box container">
-						<div class="row">
-							<div class="col-7 col-12-medium">
-								<h2 id="detalhes">Web Car</h2>
-								<p id="detalhes">+ informações sobre seu veiculo</p>
-							</div>
-							
-
-						</div>
-					  </section> 
-					</div>
-			
-				</div>  
-				<p></p>
 				<section>
 					<div>
-						<img src=<%= cars.imagem %> width=450 widget=400 alt=<%= cars.marca %> />
-						<p></p>
-						<h2><%= cars.modelo %></h2>
-						<h2><%= cars.marca %></h2>
+						<img src=<%= cars.imagem %> alt=<%= cars.marca %> />
+						<h2><%= cars.marca %> <%= cars.modelo %></h2>
 						<p>ANO <%= cars.ano %></p>
 						<p>	
 							MOTOR: <%= cars.motor %> cilindradas</p> 
 							<p>CAMBIO <%= cars.cambio %></p>
 							<p>COR: <%= cars.cor %></p>
 						
-						<h3><%= cars.valor %></h3>
+						<h3>R$ <%= cars.valor %></h3>
 						<p><%= cars.descricao %></p>
 					</div>
-					<a href="#">Comprar!</a>
+					<a href="/deletar/<%= cars.id%>">Excluir</a>
+					<a href="/editar/<%=cars.id%>">EDITAR</a>
+					
 					<a href="/">Voltar</a>
 				</section> 
-				<ul>
-
-					<li><a href="http://localhost:3000/" class="button alt large icon solid fa-question-circle">Voltar</a></li>
-
-				</ul>
+				
+				
 				
 				<!-- Footer -->
-
 				<div id="footer-wrapper">
 					<footer id="footer" class="container">
 						<div class="row">
