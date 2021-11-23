@@ -78,12 +78,13 @@ app.post("/subscription", async (req, res) => {
       console.log(err);
 
       res.render("cadastro", {
-        msg: "Ocorreu um erro ao cadastrar!"
+        msg: "Opa! Ocorreu um erro ao cadastrar!"
       })
     }
-  }
-  
-})
+  } res.redirect('/')
+});
+
+// Exite registro completo do banco de dados.
 
 app.get("/detalhes/:id", async(req, res) => {
   const cars = await Cars.findByPk(req.params.id);
@@ -126,6 +127,8 @@ app.post("/editar/:id", async (req, res) => {
     cars: carroEditado,
     msg: "Editado com sucesso!",
   });
+
+  res.redirect("/")
 });
 
 // Deletar registro do banco de dados.
@@ -133,7 +136,7 @@ app.post("/editar/:id", async (req, res) => {
 app.get("/deletar/:id", async (req, res) => {
   const cars = await Cars.findByPk(req.params.id);
 
-  if (!Cars) {
+  if (!cars) {
     res.render("deletar", {
       msg: "Veículo não encontrado!",
     });
@@ -149,13 +152,13 @@ app.post("/deletar/:id", async (req, res) => {
 
   if (!cars) {
     res.render("deletar", {
-      cars, msg: "Filme não encontrado!",
+      cars, msg: "Veículo não encontrado!",
     });
   }
 
   await cars.destroy();
 
-  msg = `Filme ${cars.modelo} Deletado com sucesso!`
+  msg = `${cars.modelo} deletado com sucesso!`
 
   res.redirect("/");
 });
