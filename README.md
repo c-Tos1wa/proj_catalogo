@@ -22,6 +22,11 @@ Windows:
 ```
 git clone https://github.com/c-Tos1wa/proj_catalogo.git
 ```
+Depois de clonado, no terminal do seu VSCode, digite 
+```
+npm install
+```
+para instalar as dependências.
 
 ## ☕ Usando `<Webcar>`
 
@@ -30,7 +35,7 @@ Para usar `<Webcar>`, siga estas etapas:
 ```
 No terminal, digite npm run dev e no navegador, digite localhost:3000.
 ```
-Ou se preferir, acesse diretamente: <!--a href="https://pokeagenda.herokuapp.com/" target=_blank >Pokedex</!--a>
+<!--Ou se preferir, acesse diretamente: <!--a href="https://pokeagenda.herokuapp.com/" target=_blank >Pokedex</!--a>-->
 
 ## 🤝 Colaboradores
 

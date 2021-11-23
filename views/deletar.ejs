@@ -4,7 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="/css/style.css">
-    <title>WEB CAR - Detalhes</title>
+    <title>WEB CAR | Detalhes</title>
 </head>
 
 
@@ -15,6 +15,11 @@
 				<div>
 				<div id="logo">
 					<h1>WEB CAR</a></h1>
+					<nav id="nav">
+						<ul>
+								<li><a href="/" class="button alt large icon solid fa-question-circle">HOME</a></li>
+						</ul>
+				</nav>  
           
           <% if(msg != "") {  %>
             <section id="message">
@@ -26,7 +31,8 @@
         
             <form action="/deletar/<%= cars.id %>" method="POST">
                 <div>
-                   <h4>Tem certeza que deseja deletar o veículo?: <%= cars.modelo %></h4>
+                   <h4>Tem certeza que deseja deletar o modelo <%= cars.modelo %>? </h4>
+									 <img src="<%= cars.imagem %>" />
                 </div>
                 <button type="submit">Deletar</button>
             </form>
