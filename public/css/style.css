@@ -52,10 +52,10 @@ input, select, textarea {
 	}
 
 	body {
-		background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
+		/* background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
 		background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
 		background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
-		background-image: linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png");
+		background-image: linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0)), url("images/bg01.png"); */
 		background-color: #f7f7f7;
 		background-position: top left, top left;
 		background-repeat: repeat-x, repeat;
@@ -70,11 +70,13 @@ input, select, textarea {
 		section#cadcarros{
 		padding: 1rem;
    	 	display: flex;
+			flex-direction: column;
     	justify-content: center;
+			align-items: center;
     	flex-wrap: wrap;
     	opacity: 0.9;
     	background-color: #fff;
-    	margin: 0 20rem 10 20rem;
+    	margin: 0 10rem 10 10rem;
     	box-shadow: 0 0 1rem #00000060;
     	border-radius: 1rem;
 
@@ -90,6 +92,7 @@ input, select, textarea {
 			font-size:13px;
 			padding:6px 10px;
 			text-decoration:none;
+			margin-top: 1.5em;
 			} 
 			
 			.bt-vd {
@@ -185,6 +188,7 @@ input, select, textarea {
 		align-content: stretch;
 	}
 
+
 		@media screen and (max-width: 1680px) {
 
 			.container {
@@ -223,7 +227,7 @@ input, select, textarea {
 		display: flex;
 		flex-wrap: wrap;
 		box-sizing: border-box;
-		align-items: stretch;
+		align-items: center;
 	}
 
 		.row > * {
@@ -468,10 +472,10 @@ input, select, textarea {
 				display: flex;
 				flex-wrap: wrap;
 				box-sizing: border-box;
-				align-items: stretch;
+				/* align-items: stretch; */
 			}
 
-				.row > * {
+				/* .row > * {
 					box-sizing: border-box;
 				}
 
@@ -652,7 +656,7 @@ input, select, textarea {
 
 						.row.gtr-50.gtr-uniform > * {
 							padding-top: 20px;
-						}
+						} */
 
 				.row {
 					margin-top: -40px;
@@ -1458,7 +1462,7 @@ input, select, textarea {
 
 	#copyright {
 		color: #aaa;
-		padding: 4em 0 0 0;
+		padding: 2em 0 0 0;
 		text-align: center;
 	}
 
@@ -2020,11 +2024,16 @@ input, select, textarea {
 			}
 
 			#copyright {
-				text-align: left;
+				text-align: center;
 			}
 
-			
+			}
 
+			.cards{
+				display: flex;
+				padding: 5rem;
+				gap: 2rem;
+				flex-wrap: wrap;
 			}
 
 	

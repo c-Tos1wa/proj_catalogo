@@ -94,12 +94,12 @@ app.get("/detalhes/:id", async(req, res) => {
   });
 });
 
+app.get("/informacoes", (req, res) => {
+  res.render("informacoes");
+})
+
 app.get("/new_cadastro", (req, res) => {
   res.render('newCadastro');
-});
-
-app.get("/deletar", (req, res) => {
-  res.render('delete');
 });
 
 // Editar registro no banco de dados.
@@ -133,14 +133,14 @@ app.post("/editar/:id", async (req, res) => {
 app.get("/deletar/:id", async (req, res) => {
   const cars = await Cars.findByPk(req.params.id);
 
-  if (!Cars) {
-    res.render("deletar", {
+  if (!cars) {
+    res.render("delete", {
       mensagem: "Veículo não encontrado!",
     });
   }
 
-  res.render("deletar", {
-    Cars,
+  res.render("delete", {
+    cars,
   });
 });
 
