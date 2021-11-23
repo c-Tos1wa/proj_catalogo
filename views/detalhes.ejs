@@ -27,9 +27,12 @@
 						<h3>R$ <%= cars.valor %></h3>
 						<p><%= cars.descricao %></p>
 					</div>
-					<a href="/deletar">Comprar!</a>
+					<a href="/deletar/<%= cars.id%>">Excluir</a>
+					<a href="/editar/<%=cars.id%>">EDITAR</a>
+					
 					<a href="/">Voltar</a>
 				</section> 
+				
 				
 				
 				<!-- Footer -->

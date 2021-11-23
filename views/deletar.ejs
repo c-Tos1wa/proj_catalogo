@@ -1,0 +1,54 @@
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/css/style.css">
+    <title>WEB CAR - Detalhes</title>
+</head>
+
+
+
+<body>
+						
+				<!-- Logo -->
+				<div>
+				<div id="logo">
+					<h1>WEB CAR</a></h1>
+          
+          <% if(msg != "") {  %>
+            <section id="message">
+                <p><%= msg %></p> <span id="close">&times;</span>
+            </section>
+        <% }  %>
+        
+        <% if(cars != null) {  %>
+        
+            <form action="/deletar/<%= cars.id %>" method="POST">
+                <div>
+                   <h4>Tem certeza que deseja deletar o veículo?: <%= cars.modelo %></h4>
+                </div>
+                <button type="submit">Deletar</button>
+            </form>
+        
+        <% }  %>
+							</div>
+
+						</div>
+						<div class="row">
+							<div class="col-12">
+								<div id="copyright">
+									<ul class="menu">
+										<li>&copy; Untitled. Todos os direitos reservados</li><li>Design: Luiz Alberto Coimbra</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</footer>
+				</div>
+
+			</div>
+
+  
+</body>
+</html>
