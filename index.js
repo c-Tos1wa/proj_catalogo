@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config();
 const express = require("express");
 const path = require("path");
 const app = express();
@@ -84,7 +84,7 @@ app.post("/subscription", async (req, res) => {
   } res.redirect('/')
 });
 
-// Exite registro completo do banco de dados.
+// Mostra um registro específico do banco de dados.
 
 app.get("/detalhes/:id", async(req, res) => {
   const cars = await Cars.findByPk(req.params.id);
@@ -96,7 +96,7 @@ app.get("/detalhes/:id", async(req, res) => {
 
 
 
-// Editar registro no banco de dados.
+// Mostra registro do banco de dados a ser editado.
 app.get("/editar/:id", async (req, res) => {
   const cars = await Cars.findByPk(req.params.id);
 
@@ -105,6 +105,7 @@ app.get("/editar/:id", async (req, res) => {
   });
 });
 
+// Editar registro no banco de dados.
 app.post("/editar/:id", async (req, res) => {
   const cars = await Cars.findByPk(req.params.id);
 
