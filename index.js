@@ -91,7 +91,8 @@ app.post("/subscription", async (req, res) => {
         msg: "Opa! Ocorreu um erro ao cadastrar!"
       })
     }
-  } res.redirect('/')
+  } 
+  
 });
 
 // Mostra um registro específico do banco de dados.
@@ -109,6 +110,10 @@ app.get("/detalhes/:id", async(req, res) => {
 // Mostra registro do banco de dados a ser editado.
 app.get("/editar/:id", async (req, res) => {
   const cars = await Cars.findByPk(req.params.id);
+  
+  setTimeout (() => {
+    msg = ""
+  }, 5000)
 
   
   res.render('editar', {
@@ -144,7 +149,7 @@ app.post("/editar/:id", async (req, res) => {
     msg: "Editado com sucesso!",
   });
   
-  res.redirect("/")
+  // res.redirect("/editar")
 });
 
 // Deletar registro do banco de dados.
