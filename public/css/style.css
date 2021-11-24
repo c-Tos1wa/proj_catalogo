@@ -14,10 +14,10 @@ html, body, div, span,form, label,  article,footer, header, menu, nav
 	align-items: flex-start;	
 }
 
-img {
+/* img {
 	width: 450;
 	height: auto;
-}
+} */
 
 article,footer, header, menu, nav, section {
 	display: block;
