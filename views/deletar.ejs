@@ -4,7 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="/css/style.css">
-    <title>WEB CAR | Detalhes</title>
+    <title>WEB CAR | Deletar</title>
 </head>
 
 
@@ -32,9 +32,9 @@
             <form action="/deletar/<%= cars.id %>" method="POST">
                 <div>
                    <h4>Tem certeza que deseja deletar o modelo <%= cars.modelo %>? </h4>
-									 <img src="<%= cars.imagem %>" />
+									 <img src="<%= cars.imagem %>" width="350" height="300" />
                 </div>
-                <button type="submit">Deletar</button>
+                <button class="danger" type="submit">Deletar</button>
             </form>
         
         <% }  %>
@@ -54,7 +54,7 @@
 				</div>
 
 			</div>
-
+<script src="/js/script.js"></script>
   
 </body>
 </html>

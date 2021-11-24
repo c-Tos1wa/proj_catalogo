@@ -7,7 +7,9 @@ html, body, div, span,form, label,  article,footer, header, menu, nav
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	/* vertical-align:baseline; */
+	vertical-align:baseline;
+	/* display: flex;
+	flex-direction: column; */
 	text-align: center;
 	align-items: flex-start;
 	
@@ -178,8 +180,8 @@ input, select, textarea {
 	.container {
 		margin: 0 auto;
 		max-width: 100%;
-		width: 1400px;
-		align-items: stretch;
+		/* width: 1400px; */
+		align-items: center;
 		align-content: stretch;
 	}
 
@@ -1983,7 +1985,7 @@ input, select, textarea {
 
 			#banner {
 				text-align: center;
-				padding: 15px 15px 15px 15px;
+				padding: 10px 15px 10px 15px;
 				margin: 0 auto !important;
 			}
 
@@ -2028,11 +2030,64 @@ input, select, textarea {
 
 			.cards{
 				display: flex;
-				/* padding: 5rem; */
+				padding: 5rem;
 				gap: 2rem;
 				flex-wrap: wrap;
 			}
 
+			.buttons{
+				gap: 0.8em;
+				text-decoration: none;
+				display: flex;
+				justify-content: center;
+			}
+
+			.danger{
+				background:rgb(148, 28, 28);
+			}
+
+			.card_details{
+				display: flex;
+				flex-direction: column;
+			}
+
+			.cars_details h2{
+				margin-top: 1.3em;
+			}
+
+			#message{
+					border-color: #3CB371;
+					color: #000;
+					background-color: #3CB371;
+					display: flex;
+					align-items: stretch;
+					justify-content: center;
+					font-size: 1.5em;
+					font-weight: 500;
+					gap: 1.2em;
+			}
+
+			#close{
+				cursor: pointer;
+			}
+
+			.icons img{
+				width: 50;
+				height: 50;
+			}
+
+			#cadastro{
+				display: flex;
+				flex-direction: column;
+
+			}
+
+			@media screen and (min-width: 800px){
+				.buttons{
+					padding: 1em;
+					font-size: 1.1em;
+				}
+			}
 		
 
 			

@@ -13,24 +13,30 @@
 				<div>
 				<div id="logo">
 					<h1>WEB CAR</a></h1>
+
+					<nav id="nav">
+						<ul>
+								<li><a href="/" class="button alt large icon solid fa-question-circle">HOME</a></li>
+						</ul>
+				</nav> 
 				
 				<section>
 					<div class="cars_details">
-						<img src=<%= cars.imagem %> alt=<%= cars.marca %> />
+						<img width="450" height="400" src=<%= cars.imagem %>  alt=<%= cars.marca %> />
 						<h2><%= cars.marca %> <%= cars.modelo %></h2>
-						<p>ANO <%= cars.ano %></p>
+						<p>ANO <%= cars.ano%></p>
 						<p>	
 							MOTOR: <%= cars.motor %> cilindradas</p> 
 							<p>CAMBIO <%= cars.cambio %></p>
 							<p>COR: <%= cars.cor %></p>
-						
+							<p><%= cars.descricao %></p>
 						<h3>R$ <%= cars.valor %></h3>
-						<p><%= cars.descricao %></p>
 					</div>
-					<a href="/deletar/<%= cars.id%>">Excluir</a>
-					<a href="/editar/<%=cars.id%>">EDITAR</a>
+					<div class="buttons">
+						<a href="/editar/<%=cars.id%>"><button>EDITAR</button></a>
+						<a href="/deletar/<%= cars.id%>"><button class="danger">Excluir</button></a>
+					</div>
 					
-					<a href="/">Voltar</a>
 				</section> 
 				
 				
@@ -39,22 +45,22 @@
 				<div id="footer-wrapper">
 					<footer id="footer" class="container">
 						<div class="row">
-							<div class="col-3 col-6-medium col-12-small">
+							<div class="col-3">
 
 								<!-- Links -->
 									<section class="widget links">
 										<h3>Linhas de crédito</h3>
 										<ul class="style2">
 											<li><a href="#">Financiamento em até 60 x</a></li>
-											<li><a href="#">Consórciso Web Car</a></li>
-											<li><a href="#">Catão de Crédito em até 24 X</a></li>
+											<li><a href="#">Consórcio Web Car</a></li>
+											<li><a href="#">Cartão de Crédito em até 24 X</a></li>
 											<li><a href="#">A vista com descontos de até 10%</a></li>
 											
 										</ul>
 									</section>
 
 							</div>
-							<div class="col-3 col-6-medium col-12-small">
+							<div class="col-3">
 
 								<!-- Links -->
 									<section class="widget links">
@@ -69,7 +75,7 @@
 									</section>
 
 							</div>
-							<div class="col-3 col-6-medium col-12-small">
+							<div class="col-3">
 
 								<!-- Links -->
 									<section class="widget links">
@@ -81,18 +87,18 @@
 									</section>
 
 							</div>
-							<div class="col-3 col-6-medium col-12-small">
+							<div class="col-3">
 
 								<!-- Contact -->
 									<section class="widget contact last">
 										<h3>Entre em contato</h3>
-										<ul>
+										<ul class="icons">
 											<li><img src="/img/twitter.png" alt="logo do twitter" /></li>
-													<li><img src="/img/facebook.png" alt="logo do facebook" /></li>
-													<li><img src="/img/instagram.png" alt="logo do instagram" /></li>
-													<li><img src="/img/dribble.png" alt="logo do dribble" /></li>
-													<li><img src="/img/pinterest.png" alt="logo do pinterest" /></li>
-													<div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+											<li><img src="/img/facebook.png" alt="logo do facebook" /></li>
+											<li><img src="/img/instagram.png" alt="logo do instagram" /></li>
+											<li><img src="/img/dribble.png" alt="logo do dribble" /></li>
+											<li><img src="/img/pinterest.png" alt="logo do pinterest" /></li>
+											<div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 										</ul>
 										<p>Rua Suécia, 444<br />
 										Paraíso do Norte, PR CEP 87.780-000<br />

@@ -31,7 +31,12 @@ app.get("/", async(req, res) => {
 
 
 app.get("/cadastro", (req, res) => {
-  res.render('cadastro', { msg })
+  setTimeout (() => {
+    msg = ""
+  }, 5000)
+  res.render('cadastro', { 
+    msg 
+  })
 });
 
 app.post("/subscription", async (req, res) => {
@@ -69,6 +74,11 @@ app.post("/subscription", async (req, res) => {
       const carros = await Cars.create({
         marca, modelo, imagem, motor, cambio, descricao, ano, cor, combustivel, valor
       });
+
+      setTimeout (() => {
+        msg = ""
+      }, 5000)
+
       res.render("cadastro", {
         carros, 
         msg: 'Veículo cadastrado com sucesso' 
@@ -100,7 +110,11 @@ app.get("/detalhes/:id", async(req, res) => {
 app.get("/editar/:id", async (req, res) => {
   const cars = await Cars.findByPk(req.params.id);
 
-  res.render('editar',{
+  setTimeout (() => {
+    msg = ""
+  }, 5000)
+
+  res.render('editar', {
     cars, msg
   });
 });
@@ -143,6 +157,10 @@ app.get("/deletar/:id", async (req, res) => {
     });
   }
 
+  setTimeout (() => {
+    msg = ""
+  }, 5000)
+
   res.render("deletar", {
     cars, msg
   });
@@ -162,6 +180,10 @@ app.post("/deletar/:id", async (req, res) => {
   msg = `${cars.modelo} deletado com sucesso!`
 
   res.redirect("/");
+});
+
+app.get("/sobre", (req, res) => {
+  res.render('sobre')
 });
 
 
