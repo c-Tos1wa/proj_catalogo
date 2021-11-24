@@ -110,10 +110,7 @@ app.get("/detalhes/:id", async(req, res) => {
 app.get("/editar/:id", async (req, res) => {
   const cars = await Cars.findByPk(req.params.id);
 
-  setTimeout (() => {
-    msg = ""
-  }, 5000)
-
+  
   res.render('editar', {
     cars, msg
   });
@@ -122,9 +119,9 @@ app.get("/editar/:id", async (req, res) => {
 // Editar registro no banco de dados.
 app.post("/editar/:id", async (req, res) => {
   const cars = await Cars.findByPk(req.params.id);
-
+  
   const { marca, modelo, imagem, motor, cambio, descricao, ano, cor, combustivel, valor } = req.body;
-
+  
   cars.marca = marca;
   cars.modelo = modelo;
   cars.imagem = imagem;
@@ -135,14 +132,18 @@ app.post("/editar/:id", async (req, res) => {
   cars.cor = cor;
   cars.combustivel = combustivel;
   cars.valor =  valor;
-
+  
   const carroEditado = await cars.save();
-
+  
+  setTimeout (() => {
+    msg = ""
+  }, 5000)
+  
   res.render("editar", {
     cars: carroEditado,
     msg: "Editado com sucesso!",
   });
-
+  
   res.redirect("/")
 });
 
