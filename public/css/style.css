@@ -11,8 +11,12 @@ html, body, div, span,form, label,  article,footer, header, menu, nav
 	/* display: flex;
 	flex-direction: column; */
 	text-align: center;
-	align-items: flex-start;
-	
+	align-items: flex-start;	
+}
+
+img {
+	width: 450;
+	height: auto;
 }
 
 article,footer, header, menu, nav, section {
