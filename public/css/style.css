@@ -2079,8 +2079,20 @@ input, select, textarea {
 			#cadastro{
 				display: flex;
 				flex-direction: column;
-
 			}
+
+			section#sobre{
+				padding: 6rem;
+				display: flex;
+				justify-content: center;
+				/* flex-wrap: wrap; */
+				opacity: 0.9;
+				background-color: #fff;
+				margin: 0 20rem 10 20rem;
+				box-shadow: 0 0 1rem #00000060;
+				border-radius: 1rem;
+		
+				}
 
 			@media screen and (min-width: 800px){
 				.buttons{
